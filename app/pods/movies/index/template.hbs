@@ -1,0 +1,20 @@
+{{#each model as |movie|}}
+<div class="movie" style="padding: 10px;">
+  <div class="movie-name">
+    {{movie.id}}. {{#link-to 'movie' movie.id}}
+    {{movie.name}}
+    {{/link-to}}
+  </div>
+  <div class="movie-authors">
+    Authors: 
+    {{#each movie.authors as |author|}}
+      {{#link-to 'participant' author.id}}
+        {{author.name}} 
+      {{/link-to}}&nbsp;
+    {{/each}}
+  </div>
+  <div class="movie-description">
+    Description: {{movie.description}}
+  </div>
+</div>
+{{/each}}

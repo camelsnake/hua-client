@@ -1,0 +1,8 @@
+{{#each model as |participant|}}
+<div class="participant" style="padding: 10px;">
+  {{participant.id}}. 
+  {{#link-to 'participant' participant.id}}
+    {{participant.name}}
+  {{/link-to}}
+</div>
+{{/each}}

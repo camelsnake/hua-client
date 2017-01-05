@@ -7,12 +7,17 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  
   this.route('movies', {path: 'movies'}, function() {
     this.route('movie', {path: ':id', resetNamespace: true});
   });
-  this.route('authors');
-  this.route('departments');
+
+  this.route('departments', {path: 'departments'}, function() {
+    this.route('department', {path: ':id', resetNamespace: true});
+  });
+
+  this.route('participants', {path: 'participants'}, function() {
+    this.route('participant', {path: ':id', resetNamespace: true});
+  });
 });
 
 export default Router;

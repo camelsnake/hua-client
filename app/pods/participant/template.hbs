@@ -1,0 +1,13 @@
+<h2>{{model.name}}</h2>
+
+<h4>Worked on:</h4>
+
+<ul>
+  {{#each model.movies as |movie index|}}
+  <li>
+    {{#link-to 'movie' movie.id}}
+      {{movie.name}}
+    {{/link-to}}
+  </li>
+  {{/each}}
+</ul>    

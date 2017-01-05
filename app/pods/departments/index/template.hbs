@@ -1,0 +1,7 @@
+{{#each model as |department|}}
+<div class="department" style="padding: 10px;">
+  {{department.id}}. {{#link-to 'department' department.id}}
+    {{department.name}}
+  {{/link-to}}
+</div>
+{{/each}}

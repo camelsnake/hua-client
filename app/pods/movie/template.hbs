@@ -1,20 +1,9 @@
 {{#with model as |movie|}}
 <div class='movie'>
-  {{movie.name}} <br>
-  {{movie.description}}
+  <h2>{{movie.name}}</h2>
+  <h4>{{movie.description}} </h4>
   
-  <ul>
-  {{#each movie.roles as |role|}}
-  <li>
-    {{role.roleType.department.name}}
-    
-    <ul>
-      <li>
-        {{role.participant.name}} - {{role.roleType.name}}
-      </li>
-    </ul>
-  </li>
-  {{/each}}
-  </ul>
+  {{department-roles departments=model.departments roles=model.roles}}
 </div> 
-{{/with}}
+{{/with}} 
+

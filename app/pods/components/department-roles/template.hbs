@@ -1,0 +1,16 @@
+{{#each movieDepartmentRoles as |department|}}
+{{#link-to 'department' department.id}}
+  {{department.name}}
+{{/link-to}}
+
+<ul>
+  {{#each department.roles as |role|}}
+  <li>
+    {{#link-to 'participant' role.participant.id}}
+      {{role.participant.name}}
+    {{/link-to}}
+     - {{role.roleType}}
+  </li>
+  {{/each}}
+</ul>
+{{/each}}

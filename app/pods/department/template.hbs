@@ -1,0 +1,17 @@
+<h2>{{model.name}}</h2>
+
+<ul>
+{{#each model.roles as |role|}}
+<li>
+  {{role.roleType}} - 
+  
+  {{#link-to 'participant' role.participant.id}}
+    {{role.participant.name}}
+  {{/link-to}} - 
+  
+  {{#link-to 'movie' role.movie.id}}
+    {{role.movie.name}}
+  {{/link-to}}
+</li>
+{{/each}}
+</ul>
