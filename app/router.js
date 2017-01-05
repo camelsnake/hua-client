@@ -7,6 +7,12 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  
+  this.route('movies', {path: 'movies'}, function() {
+    this.route('movie', {path: ':id', resetNamespace: true});
+  });
+  this.route('authors');
+  this.route('departments');
 });
 
 export default Router;
